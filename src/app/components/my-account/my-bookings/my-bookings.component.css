@@ -1,0 +1,198 @@
+/* Reset and basic setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: #f4f4f4; /* Light gray background */
+  color: #333; /* Dark gray text for readability */
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px;
+  font-weight: normal;
+}
+
+/* Table container */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  background-color: #fff; /* White background for table */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table Header */
+thead {
+  background-color: #1d1c1c;
+}
+
+thead th {
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fdf9f9; /* Dark text color for header */
+  border-bottom: 2px solid #bbb; /* Soft border below header */
+}
+
+th {
+  border-bottom: 2px solid #ddd; /* Light border for visual clarity */
+}
+
+/* Table Body */
+tbody tr {
+  background-color: #fff; /* White background for rows */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slightly off-white for alternating rows */
+}
+
+tbody td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #e0e0e0; /* Soft border between rows */
+  text-align: left;
+  font-size: 14px;
+  color: #555; /* Lighter text for rows */
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: #f0f0f0; /* Light hover effect */
+  transition: background-color 0.3s ease;
+}
+
+/* Status Labels */
+.status {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status.confirmed {
+  background-color: #4CAF50; /* Green for confirmed */
+  color: white;
+}
+
+.status.pending {
+  background-color: #FF9800; /* Orange for pending */
+  color: white;
+}
+
+.status.cancelled {
+  background-color: #F44336; /* Red for cancelled */
+  color: white;
+}
+
+/* Date and Price */
+.date, .price {
+  font-style: italic;
+}
+
+.price {
+  text-align: right;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table, th, td {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none; /* Hide header for smaller screens */
+  }
+
+  tbody tr {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+  }
+
+  tbody td {
+    display: block;
+    text-align: right;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  tbody td:nth-child(1) {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Compact write review button for table rows */
+.write-review-btn {
+  background-color: transparent;
+  color: #031d04;
+  border: 2px solid #4caf50;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-family: 'Times New Roman', serif;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.write-review-btn:hover {
+  background-color: #4caf50;
+  color: white;
+  transform: scale(1.05);
+}
+
+.write-review-btn:disabled {
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.write-review-btn.disabled {
+  border-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.write-review-btn.active {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+/* Specific button styles for different states */
+.write-review-btn.active:hover {
+  background-color: #4caf50;
+  color: white;
+  transform: scale(1.05);
+}
+
+.write-review-btn.disabled:hover {
+  background-color: transparent;
+  color: #ccc;
+}

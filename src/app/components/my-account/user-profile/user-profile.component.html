@@ -1,0 +1,134 @@
+<body>
+  <main class="main">
+    <div class="user-view">
+      <nav class="user-view__menu">
+        <ul class="side-nav">
+          <li class="side-nav--active">
+            <a routerLink="/userProfile/mySetting">
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-settings"></use>
+              </svg>
+              Settings
+            </a>
+          </li>
+          <li *ngIf="userRole !== 'admin'">
+            <a routerLink="/userProfile/myBookings">
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-briefcase"></use>
+              </svg>
+              My bookings
+            </a>
+          </li>
+          <li *ngIf="userRole !== 'admin'">
+            <a href="/userProfile/myReviews">
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-star"></use>
+              </svg>
+              My reviews
+            </a>
+          </li>
+          <li>
+            <a>
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-credit-card"></use>
+              </svg>
+              Billing
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="admin-nav" *ngIf="userRole === 'admin'">
+        <h5 class="admin-nav__heading">Admin</h5>
+        <ul class="side-nav">
+          <!-- <li>
+            <a>
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-map"></use>
+              </svg>
+              Manage tours
+            </a>
+          </li> -->
+          <li>
+            <a>
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-users"></use>
+              </svg>
+              Manage users
+            </a>
+          </li>
+          <li>
+            <a routerLink="/userProfile/adminTours">
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-star"></use>
+              </svg>
+              Manage reviews
+            </a>
+          </li>
+          <li>
+            <a routerLink="/userProfile/myBookings">
+              <svg width="20" height="20">
+                <use xlink:href="img/icons.svg#icon-briefcase"></use>
+              </svg>
+              Manage bookings
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="user-view__content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- <div class="user-view__content">
+      Account Settings Form
+      <div class="user-view__form-container">
+        <h2 class="heading-secondary">Your account settings</h2>
+        <form class="form form-user-data">
+          <div class="form__group">
+            <label class="form__label" for="name">Name</label>
+            <input id="name" name="name" ngModel [(ngModel)]="userName" class="form__input" type="text" value="Jonas Schmedtmann" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="email">Email address</label>
+            <input id="email" name="email" ngModel [(ngModel)]="userEmail" class="form__input" type="text" value="admin@natours.io" required>
+          </div>
+          <div class="form__group form__photo-upload">
+
+            <img class="form__user-photo" [src]="'/assets/img/users/' + userPhoto" alt="User photo">
+            <a class="btn-text" href="#">Choose new photo</a>
+          </div>
+          <div class="form__group">
+            <button class="btn btn--small btn--green">Save settings</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="line"></div>
+
+      Password Change Form
+      <div class="user-view__form-container">
+        <h2 class="heading-secondary">Password change</h2>
+        <form class="form form-user-settings">
+          <div class="form__group">
+            <label class="form__label" for="password-current">Current password</label>
+            <input id="password-current" class="form__input" type="password" placeholder="••••••••" required minlength="8">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="password">New password</label>
+            <input id="password" class="form__input" type="password" placeholder="••••••••" required minlength="8">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="password-confirm">Confirm password</label>
+            <input id="password-confirm" class="form__input" type="password" placeholder="••••••••" required minlength="8">
+          </div>
+          <div class="form__group">
+            <button class="btn btn--small btn--green">Save password</button>
+          </div>
+        </form>
+      </div>
+    </div> -->
+  </main>
+
+</body>

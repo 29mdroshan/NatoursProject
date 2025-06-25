@@ -1,0 +1,108 @@
+<div class="user-view__content">
+  <!-- Account Settings Form -->
+  <div class="user-view__form-container">
+    <h2 class="heading-secondary">Your account settings</h2>
+    <form class="form form-user-data" (ngSubmit)="updateUser(updateUserForm.value)" #updateUserForm="ngForm">
+      <div class="form__group">
+        <label class="form__label" for="name">Name</label>
+        <input 
+          id="name" 
+          name="name" 
+          ngModel 
+          [(ngModel)]="userName" 
+          class="form__input" 
+          type="text" 
+          required
+        >
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="email">Email address</label>
+        <input 
+          id="email" 
+          name="email" 
+          ngModel 
+          [(ngModel)]="userEmail" 
+          class="form__input" 
+          type="text" 
+          required
+        >
+      </div>
+      <div class="form__group form__photo-upload">
+        <img 
+          class="form__user-photo" 
+          [src]="'/assets/img/users/' + userPhoto" 
+          alt="User photo">
+        <a class="btn-text"><input type="file" id="fileInput"  
+          (change)="onFileChange($event)"
+          accept="image/*"/></a>
+      </div>
+      <div class="form__group">
+        <button class="btn btn--small btn--green">Save settings</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="line"></div>
+
+  <!-- Password Change Form -->
+  <div class="user-view__form-container">
+  <h2 class="heading-secondary">Password change</h2>
+  <form class="form form-user-settings" [formGroup]="updatePasswordForm" (ngSubmit)="onSubmitPasswordChange()" >
+
+    <!-- Current Password -->
+    <div class="form__group">
+      <label class="form__label" for="currentPassword">Current Password</label>
+      <div class="password-field">
+        <input id="currentPassword" formControlName="currentPassword" class="form__input" 
+               [type]="showPassword ? 'text' : 'password'" placeholder="••••••••">
+      </div>
+      <p *ngIf="updatePasswordForm.get('currentPassword')?.invalid && updatePasswordForm.get('currentPassword')?.touched" class="text-danger">
+        <small>Password is Required</small>
+      </p>
+    </div>
+
+    <!-- New Password -->
+    <div class="form__group">
+      <label class="form__label" for="newPassword">New Password</label>
+      <div class="password-field">
+        <input id="newPassword" formControlName="newPassword" class="form__input" 
+               [type]="showPassword ? 'text' : 'password'" placeholder="••••••••">
+      </div>
+      <p *ngIf="updatePasswordForm.get('newPassword')?.invalid && updatePasswordForm.get('newPassword')?.touched" class="text-danger">
+        <small>Password is Required</small>
+      </p>
+      <p *ngIf="updatePasswordForm.get('newPassword')?.hasError('passwordSameAsCurrent') && updatePasswordForm.get('newPassword')?.touched" class="text-danger">
+        <small>New password cannot be the same as current password.</small>
+      </p>
+    </div>
+
+    <!-- Password Confirm -->
+    <div class="form__group">
+      <label class="form__label" for="passwordConfirm">Password Confirm</label>
+      <div class="password-field">
+        <input id="passwordConfirm" formControlName="passwordConfirm" class="form__input" 
+               [type]="showPassword ? 'text' : 'password'" placeholder="••••••••">
+      </div>
+      <p *ngIf="updatePasswordForm.get('passwordConfirm')?.invalid && updatePasswordForm.get('passwordConfirm')?.touched" class="text-danger">
+        <small>Password is Required</small>
+      </p>
+      <p *ngIf="updatePasswordForm.get('passwordConfirm')?.hasError('passwordMismatch') && updatePasswordForm.get('passwordConfirm')?.touched" class="text-danger">
+        <small>Passwords do not match.</small>
+      </p>
+    </div>
+
+    <!-- Show Password Checkbox -->
+    <div class="show-password-checkbox">
+      <label for="showPassword">
+        <input type="checkbox" (click)="togglePasswordVisibility()" /> Show Password
+      </label>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form__group">
+      <button class="btn btn--small btn--green" [disabled]="updatePasswordForm.invalid">Save password</button>
+    </div>
+  </form>
+</div>
+
+</div>

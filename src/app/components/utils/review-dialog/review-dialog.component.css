@@ -1,0 +1,183 @@
+/* Dialog Title */
+.dialog-title {
+  font-family: 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c2c2c;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #4caf50;
+  margin-bottom: 16px;
+}
+
+/* Dialog Content */
+.dialog-content {
+  font-family: 'Times New Roman', serif;
+  background-color: #fafafa;
+  padding: 16px 20px 20px;
+  font-size: 18px;
+  color: #333;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Compact Layout for Rating and Review */
+.rating-field {
+  margin-bottom: 16px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+mat-icon {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+mat-icon.selected {
+  color: #4caf50;
+}
+
+/* Review Text Area */
+.review-field {
+  margin-top: 16px;
+}
+
+textarea {
+  width: 90%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+  resize: none;
+  height: 5rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #4caf50;
+}
+
+/* Dialog Actions */
+.dialog-actions {
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+/* Buttons */
+button {
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Cancel Button */
+button.cancel-btn {
+  background-color: transparent;
+  border: 2px solid #4caf50;
+  color: #4caf50;
+  margin-right: 10px;
+}
+
+button.cancel-btn:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Submit Button */
+button.submit-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button.submit-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+button.submit-btn:disabled {
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Dialog container overflow fix */
+.mat-dialog-container {
+  overflow: visible !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dialog-title {
+    font-size: 20px;
+  }
+
+  .dialog-content {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  mat-select {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 7px 18px;
+  }
+
+  .star-rating {
+    gap: 8px;
+  }
+
+  textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rating-field {
+    margin-bottom: 12px;
+  }
+
+  .dialog-title {
+    font-size: 18px;
+  }
+
+  .dialog-content {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  mat-select {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .star-rating {
+    gap: 5px;
+  }
+
+  textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

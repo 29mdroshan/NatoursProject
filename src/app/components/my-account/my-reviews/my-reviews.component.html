@@ -1,0 +1,11 @@
+<div class="reviews-container">
+  <div class="reviews-container">
+    <div class="card-grid">
+        <app-review-card *ngFor="let review of reviews" [review]="review" [isAdmin]="isAdmin" (reviewUpdated)="updateReview($event)" (reviewDeleted)="deleteReview($event)"></app-review-card>
+    </div>
+    </div>
+
+  <ng-template #noReviews>
+    <p class="empty-text">You haven't posted any reviews yet.</p>
+  </ng-template>
+</div>

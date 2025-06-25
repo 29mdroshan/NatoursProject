@@ -1,0 +1,213 @@
+.header {
+  background-color: #0e0a0a; /* Dark background */
+  padding: 0 2rem; /* Horizontal padding */
+  height: 4rem; /* Fixed height */
+  display: flex; /* Flexbox to arrange elements */
+  justify-content: space-between; /* Space out elements */
+  align-items: center; /* Vertically center align items */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.nav {
+  display: flex;
+  align-items: center; /* Vertically center navigation items */
+}
+
+.nav--left {
+  flex: 1; /* Left section takes available space */
+  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
+  color: #f7f7f7;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  border: none;
+  transition: all 0.3s;
+}
+
+.nav__el {
+  font-family: "Times New Roman", Times, serif;
+  color: #f7f7f7;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  border: none;
+  transition: all 0.3s;
+}
+
+.nav__el--all {
+  font-family: "Times New Roman", Times, serif;
+  color: #f7f7f7;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  border: none;
+  transition: all 0.3s;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-grow: 1; /* Ensures logo stays centered */
+}
+
+.header__logo img {
+  height: 2.5rem;
+}
+
+.header__logo h3 {
+  font-family: "Times New Roman", Times, serif;
+  color: #fff; /* White text for logo */
+  margin: 0;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+/* Search Bar Styles */
+.nav__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+}
+
+.nav__search-btn {
+  background: none;
+  border: none;
+  transform: translateY(1px);
+}
+
+.nav__search-btn svg {
+  height: 1.8rem;
+  width: 1.8rem;
+  fill: #f7f7f7;
+}
+
+.nav__search-input {
+  font-family: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: #f7f7f7;
+  border-bottom: 1px solid #999;
+  width: 8rem;
+  transition: all 0.3s;
+}
+
+.nav__search-input:focus {
+  outline: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.nav__search-input::placeholder {
+  color: #999;
+}
+
+/* Navigation Links */
+.nav__el {
+  font-family: "Times New Roman", Times, serif;
+  color: #f7f7f7;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  border: none;
+  transition: all 0.3s;
+}
+
+.nav__el--all {
+  font-size: 1.5rem;
+}
+
+.nav__el:hover {
+  color: #2ee093;
+  font-size: 1.3rem;
+}
+
+.nav--right {
+  margin-left: auto; /* Push right section to the far right */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav__el--user_name {
+  font-size: 1.4rem;
+  color: #faf7f7;
+  margin-top: 1rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav__user-img {
+  height: 2.2rem;
+  border-radius: 50%;
+}
+
+/* Media Query for Responsive Design */
+@media only screen and (max-width: 1024px) {
+  .header {
+    padding: 1rem; /* Smaller padding for mobile/tablet */
+    flex-direction: column;
+    height: auto;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .header__logo img {
+    height: 2.5rem;
+  }
+
+  .header__logo h2 {
+    font-size: 2.2rem;
+  }
+
+  .nav__search-input {
+    width: 100%;
+  }
+
+  .nav__user-img {
+    height: 2.5rem;
+  }
+}
+
+/* Extra Small Devices (Mobile Phones) */
+@media only screen and (max-width: 480px) {
+  .header__logo h2 {
+    font-size: 1.8rem;
+  }
+
+  .header__logo img {
+    height: 2rem;
+  }
+
+  .nav__el {
+    font-size: 1.4rem;
+  }
+
+  .nav__user-img {
+    height: 1.8rem;
+  }
+
+  .nav__el--user_name {
+    font-size: 1.2rem;
+  }
+
+  .nav__search-input {
+    font-size: 1rem;
+  }
+
+  .nav__search {
+    margin-top: 1rem;
+  }
+}

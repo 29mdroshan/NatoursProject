@@ -1,0 +1,25 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Tour Name</th>
+        <th>Start Location</th>
+        <th>Price</th>
+        <th>Average Rating</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="tours.length > 0; else noTours">
+      <tr *ngFor="let tour of tours" (click)="onTourClick(tour)">
+        <td>{{ tour.name | titlecase }}</td>
+        <td>{{ tour.startLocation?.description }}</td>
+        <td class="price">{{ tour.price | currency: 'USD'  }}</td>
+        <td class="number">{{ tour.ratingsAverage }}</td>
+      </tr>
+    </tbody>
+    <ng-template #noTours>
+      <tr>
+        <td colspan="9">No tours available.</td>
+      </tr>
+    </ng-template>
+  </table>
+</div>

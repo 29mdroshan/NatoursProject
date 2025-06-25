@@ -1,0 +1,31 @@
+<header class="header">
+  <nav class="nav nav--left">
+    <a class="nav__el--all" href="/">All tours</a>
+  </nav>
+
+  <div class="header__logo">
+    <h3>Natours</h3>
+    <img src="assets/img/logo-white.png" alt="Natours logo" />
+  </div>
+
+  <div class="nav__search" *ngIf="showSearchBar">
+    <button class="nav__search-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+      </svg>
+    </button>
+    <input type="text" [(ngModel)]="searchValue" ngModel class="nav__search-input" (input)="onSearchChange()" id="search" placeholder="Search Tour..">
+  </div>
+
+  <nav class="nav nav--right">
+    <a *ngIf="userName" class="nav__el nav__el--logout" (click)="logout()">Log out</a>
+    <a *ngIf="userName" class="nav__el" routerLink="/userProfile/mySetting">
+      <img class="nav__user-img" [src]="'/assets/img/users/' + userPhoto" routerLink="/userProfile/mySetting" alt="User photo" />
+    </a>
+    <p *ngIf="userName" class="nav__el--user_name">
+      <span routerLink="/userProfile/mySetting">{{ userName.split(' ')[0] | titlecase}}</span> 
+    </p>
+    <a *ngIf="!userName" class="nav__el" routerLink="/login">Log in</a>
+    <a *ngIf="!userName" class="nav__el nav__el--cta" routerLink="/signup">Sign up</a>
+  </nav>
+</header>

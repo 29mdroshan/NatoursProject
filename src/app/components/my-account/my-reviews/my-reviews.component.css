@@ -1,0 +1,22 @@
+/* Container wrapping the cards */
+.reviews-container {
+  background-color: #f9f5f5;
+  min-height: 80vh;
+  font-family: 'Times New Roman', serif;
+  color: #e0e0e0;
+}
+
+/* Grid container for review cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 cards per row */
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* Responsive fallback: 1 column on small screens */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

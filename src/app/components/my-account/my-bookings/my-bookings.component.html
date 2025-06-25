@@ -1,0 +1,47 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th *ngIf="isAdmin">User Email</th>
+        <th>Tour Name</th>
+        <th>Start Date</th>
+        <th>Start Location</th>
+        <th>Number of Days</th>
+        <th>Number of People</th>
+        <th>Status</th>
+        <th>Total Price</th>
+        <th *ngIf="!isAdmin"></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="bookings.length > 0; else noBookings">
+      <tr *ngFor="let booking of bookings">
+        <td *ngIf="isAdmin">{{ booking.userEmail }}</td>
+        <td>{{ booking.tour.name }}</td>
+        <td class="date">{{ booking.startDate | date: 'longDate' }}</td>
+        <td class="location">{{ booking.tour.startLocation.address }}</td>
+        <td class="number">{{ booking.tour.duration }}</td>
+        <td class="number">{{ booking.numberOfPeople }}</td>
+        <td>
+          <span [ngClass]="getStatusClass(booking.status)" class="status">{{ booking.status }}</span>
+        </td>
+        <td class="price">{{ booking.totalPrice | currency: 'USD' }}</td>
+
+        <!-- NEW review button cell -->
+        <td *ngIf="!isAdmin">
+          <button
+            class="write-review-btn"
+            (click)="onWriteReview(booking)"
+            [disabled]="booking.isUserReviewed"
+            [attr.title]="booking.isUserReviewed ? 'You have already reviewed this tour':'Write a review for this tour'">
+            {{ booking.isUserReviewed ? 'Reviewed' :'Write Review' }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <ng-template #noBookings>
+      <tr>
+        <td colspan="9">No bookings available.</td>
+      </tr>
+    </ng-template>
+  </table>
+</div>

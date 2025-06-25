@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* General styles for SweetAlert */
+.swal2-popup {
+    border-radius: 10px; /* Rounded corners */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.swal2-title {
+    font-size: 1.8 rem; /* Larger title font */
+    color: black; /* Black title color */
+}
+
+.swal2-content {
+    font-size: 1rem; /* Standard content font size */
+    color: black; /* Black content color */
+}
+
+.swal2-confirm {
+    background-color: black; /* Black button color */
+    color: white; /* White button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded button */
+    padding: 10px 20px; /* Padding for better appearance */
+}
+
+.swal2-cancel {
+    background-color: rgb(250, 249, 249); /* White cancel button color */
+    color: black; /* Black cancel button text color */
+    border: 1px solid black; /* Black border */
+    border-radius: 5px; /* Rounded button */
+    padding: 10px 20px; /* Padding for better appearance */
+}
+
+/* Add hover effects */
+.swal2-confirm:hover {
+    background-color: #484545; /* Darker black on hover */
+}
+
+.swal2-cancel:hover {
+    background-color: #b0aeae; /* Light gray on hover */
+}

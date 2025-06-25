@@ -1,0 +1,91 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
+  }
+
+  /* Container */
+  .main {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+  }
+
+  /* Sidebar Menu Styles */
+  .user-view {
+    width: 250px;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .user-view__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .side-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .side-nav li {
+    margin-bottom: 1rem;
+  }
+
+  .side-nav--active a {
+    color: #4CAF50;
+  }
+
+  .side-nav a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .side-nav svg {
+    margin-right: 0.5rem;
+    fill: #fff;
+  }
+
+  /* Admin Menu */
+  .admin-nav {
+    margin-top: 2rem;
+  }
+
+  .admin-nav__heading {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #0cf0b7;
+    text-align: center;
+  }
+
+  /* Content Section */
+  .user-view__content {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+    }
+
+    .user-view {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .user-view__content {
+      padding: 1rem;
+    }
+  }

@@ -1,0 +1,86 @@
+<div class="review-card">
+  <div class="card-header">
+    <img
+      class="user-photo"
+      [src]="'assets/img/users/' + review.user.photo"
+      alt="User Photo" [attr.title]="review.user.name"
+    />
+    <div class="user-info">
+      <h3 [attr.title]="review.user.name">{{ isOwner ? 'You' : review.user.name.split(' ')[0] | titlecase }}</h3>
+      <p class="review-date">{{ review.createdAt | date: 'mediumDate' }}</p>
+    </div>
+
+    <!-- Edit Button -->
+    <button
+      *ngIf="!isEditing"
+      class="edit-btn"
+      (click)="startEdit()"
+      title="Edit review"
+    >
+      Edit
+    </button>
+
+    <!-- Delete Button -->
+    <button
+      *ngIf="!isEditing"
+      class="delete-btn"
+      (click)="deleteReview()"
+      title="Delete review"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+
+  <div class="card-body">
+    <!-- Display Mode -->
+    <ng-container *ngIf="!isEditing; else editMode">
+      <div class="rating">
+        <ng-container *ngFor="let star of [0,1,2,3,4]; let i = index">
+          <span class="star" [class.filled]="i < review.rating">★</span>
+        </ng-container>
+        <span class="rating-text">({{ review.rating }})</span>
+      </div>
+      <p class="review-text" [attr.title]="getFormattedTitle(review.review)" *ngIf="review.review.length > 70; else noShortReview">
+        {{review.review.slice(0, 60)}}....</p>
+      <ng-template #noShortReview>
+        <p class="review-text">{{ review.review }}</p>
+      </ng-template>
+    </ng-container>
+
+    <!-- Edit Mode -->
+    <ng-template #editMode>
+      <div class="rating edit-rating">
+        <ng-container *ngFor="let star of [0,1,2,3,4]; let i = index">
+          <span
+            class="star"
+            [class.filled]="i < tempRating"
+            (click)="setRating(i + 1)"
+            title="Set rating {{ i + 1 }}"
+            style="cursor: pointer"
+            >★</span
+          >
+        </ng-container>
+        <span class="rating-text">({{ tempRating }})</span>
+      </div>
+
+      <textarea
+        [(ngModel)]="tempReviewText"
+        rows="4"
+        class="edit-textarea"
+        placeholder="Update your review..."
+      ></textarea>
+
+      <div class="edit-actions">
+        <button class="save-btn" (click)="saveEdit()">Save</button>
+        <button class="cancel-btn" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="card-footer" *ngIf="!isAdmin">
+    <div class="tour-info">
+      <h4>{{ review.tour.name }}</h4>
+      <p>Avg. Rating: {{ review.tour.ratingsAverage }}</p>
+    </div>
+  </div>
+</div>

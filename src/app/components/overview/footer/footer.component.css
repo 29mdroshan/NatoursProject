@@ -1,0 +1,96 @@
+/* Footer Styles */
+.footer {
+    background-color: #1a1a1a; /* Dark background for the footer */
+    color: #ffffff; /* White text color */
+    padding: 0.75rem 1.5rem; /* Reduced padding for a compact footer */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Align items horizontally */
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Use a standard sans-serif font */
+    height: 5rem; /* Adjusted height to fit content */
+    overflow: hidden; /* Prevent content overflow */
+  }
+  
+  .footer__logo {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem; /* Reduced space below logo */
+    height: auto; /* Ensure logo fits properly within available space */
+  }
+  
+  .footer__logo img {
+    height: 2rem; /* Adjust logo height */
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  .footer__nav {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Reduced space between navigation items */
+    margin: 1rem;
+  }
+  
+  .footer__nav li {
+    display: inline-block;
+  }
+  
+  .footer__nav a {
+    color: #ffffff;
+    text-decoration: none; /* Remove underline */
+    font-size: 0.875rem; /* Smaller font size for a compact footer */
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  
+  .footer__nav a:hover {
+    color: #2ee093; /* Highlight color on hover */
+  }
+  
+  .footer__copyright {
+    font-size: 0.9rem; /* Smaller font size for copyright text */
+    color: #999999; /* Lighter color for copyright text */
+    margin-top: 0.25rem; /* Space above copyright text */
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media only screen and (max-width: 768px) {
+    .footer {
+      padding: 0.5rem 1rem; /* Further reduce padding on smaller screens */
+    }
+  
+    .footer__nav {
+      flex-direction: column; /* Stack navigation items vertically on small screens */
+      gap: 0.5rem;
+    }
+  
+    .footer__nav li {
+      text-align: center; /* Center-align list items */
+    }
+  
+    .footer__copyright {
+      font-size: 0.625rem; /* Keep font size small on small screens */
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .footer{
+      height: auto; /* Adjust height to fit content */
+    }
+
+    .footer__logo img {
+      height: 1.75rem; /* Reduce logo size even further on very small screens */
+    }
+  
+    .footer__nav a {
+      font-size: 0.75rem; /* Smaller font size for navigation links */
+    }
+  
+    .footer__copyright {
+      font-size: 0.6rem; /* Make copyright text even smaller */
+    }
+  }
+  

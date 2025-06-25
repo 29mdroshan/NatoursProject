@@ -1,0 +1,11 @@
+<div class="home-content container">
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div  *ngFor="let tour of allTours | appTourFilterPipe:searchValue ">
+                <div class="col">
+                    <app-tour-card [tour]="tour"></app-tour-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

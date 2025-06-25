@@ -1,0 +1,53 @@
+.card {
+  border-radius: 20px;
+    margin: 2rem; 
+  }
+  
+  .card-img-top{
+    border-radius: 20px;
+  }
+  
+  .card-title {
+    font-family: Baskerville;  
+    color: #000;
+    font-size: 25px;
+    font-weight:bold;
+  }
+  
+  .card-subtitle {
+    font-family: Didot;  
+    font-size: 1.32rem; 
+    color: #0f0f0f; 
+    margin-bottom: 1rem; 
+  }
+  
+  .card-text {
+      font-family: "Times New Roman", Times, serif; 
+      font-size: 1rem;             
+      line-height: 1.4;            
+      color: #5c5858;                
+      margin-bottom: 2rem;        
+      font-weight: normal;         
+      text-align: justify;  
+      text-align: center;        
+    }
+  
+    .d-flex {
+      gap: 10px; 
+      margin: 3%;
+      color: #545151;
+      font-family:  Georgia, serif; 
+      font-size: 15px;
+    }
+  
+    .card-footer .fw-bold {
+      margin-right: 0.3rem; /* Adjust space between the two spans */
+    }
+  
+    .card-footer .btn {
+      border-radius: 12px; 
+      color: #fafafa;
+      background-color:#212222 ;
+    }
+  
+    

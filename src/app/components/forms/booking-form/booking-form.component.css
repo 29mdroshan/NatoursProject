@@ -1,0 +1,153 @@
+.booking-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  font-family: 'Times New Roman', serif;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+  background-size: cover;
+  background-position: center top;
+  text-align: center; /* Ensure content inside is centered */
+}
+
+.booking-form-container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+h2, .tour-title {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 0.5rem;
+  border-radius: 8px;
+  text-shadow: 3px 3px 5px rgba(97, 95, 95, 0.7);
+  display: inline-block; /* Ensures background wraps around text */
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+.tour-title {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.6);
+  background-color: rgba(54, 54, 54, 0.6);
+  padding: 0.2rem 0.5rem;
+}
+
+input,
+select {
+  padding: 0.5rem 0.8rem;
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  border: 1.5px solid #000;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #444;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+  color: #b00020;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.btn-submit {
+  align-self: center;
+  width: 100%;
+  max-width: 300px;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.85rem 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #222;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .btn-submit {
+    max-width: 100%;
+  }
+}
