@@ -1,0 +1,1 @@
+This application is built with Node.js for the backend and Angular for the frontend. It allows users to log in and book tours, while providing administrators with a management interface to oversee and control the application.
